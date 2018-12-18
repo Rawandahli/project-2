@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <a href="/"> <button type="Home">home</button></a>
+        {{#ideas}}
+        <h1>{{idea}} - {{id}}</h1>
+        <form action="/ideas/project/{{projectId}}/{{id}}?_method=DELETE" method="POST">
+            <button type="submit">delete Idea</button>
+        </form>
+        <!-- <a href="/projects/{{projectId}}/ideas">delete Idea</a> -->
+        {{/ideas}}
+        <a href="/ideas/project/{{projectId}}/new">Create Idea</a>
+        <h1>***</h1>
+        <!-- <a href="projects/new"> <button type="submit">create idea</button></a> -->
+    </center>
+</body>
+
+</html>
