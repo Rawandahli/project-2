@@ -28,16 +28,15 @@ router.delete('/project/:project_id/:idea_id', idea.delete, redirectShow);
 
 
 function renderShow(req, res) {
-    console.log("rendering show ideas",res.locals.ideas)
-
-    if(res.locals.ideas[0] != null){
+    console.log(req.params)
+    // if(res.locals.ideas[0] != null){
     var mustacheVariables = {
         ideas: res.locals.ideas,
-        projectId: res.locals.ideas[0].project_id
+        projectId: req.params.project_id
         // ///////////
         // createId: res.locals.projects[0].createId
     }
-}
+// }
     res.render('./ideas/show', mustacheVariables);
 
 }
@@ -49,7 +48,7 @@ function renderNew(req, res) {
     var mustacheVariables = {
         // project: res.locals.projects,
         ideas: res.locals.ideas,
-        projectId: res.locals.ideas[0].project_id
+        projectId: req.params.project_id
     }
     console.log("mustacheVariables ", mustacheVariables);
     res.render('./ideas/new', mustacheVariables);
@@ -57,7 +56,8 @@ function renderNew(req, res) {
 
         
     function redirectShow(req, res) {
-        res.redirect(`/project/${req.params.project_id}`);
+        console.log("aljbjbjkb")
+        res.redirect(`/ideas/project/${req.params.project_id}`);
     }
 
 module.exports = router;
