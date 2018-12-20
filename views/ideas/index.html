@@ -5,21 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Document</title>
 </head>
 
 <body>
     <center>
-        <a href="/"> <button type="Home">home</button></a>
+        <!-- <a href="/"> <button type="Home">home</button></a> -->
+        <a class="btn btn-primary" href="/" role="button">home</a>
         {{#ideas}}
+        <!-- <p class="text-warning">.text-warning</p> -->
         <h1>{{idea}} - {{id}}</h1>
+        
         <form action="/ideas/project/{{projectId}}/{{id}}?_method=DELETE" method="POST">
             <button type="submit">delete Idea</button>
+            <button class = "btn btn-outline-danger mt-1" type="submit">delete idea</button>
         </form>
         <!-- <a href="/projects/{{projectId}}/ideas">delete Idea</a> -->
         {{/ideas}}
         <a href="ideas/project/{{projectId}}/new">Create Idea</a>
+        <h1>hellogghjjk</h1>
+
+       
         <h1>***</h1>
+
+
+
+
         <!-- <a href="projects/new"> <button type="submit">create idea</button></a> -->
     </center>
 </body>

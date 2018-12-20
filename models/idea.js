@@ -51,8 +51,6 @@ idea.create = function (req, res, next) {
 
 
 
-
-
 idea.delete = function (req, res, next) {
     console.log(req.body);
     console.log("delete idea");
@@ -87,16 +85,20 @@ idea.getAllIdeas = function (req, res, next) {
 
 
 
-// student.create 
-// = function (req, res, next) {
 
-//   idea.update = function (req, res, next) {
-//    
+//   idea.update = function(req,res,next){
+//       db.one('UPDATE ideas SET idea=$1 RETURNING id;', [req.params.id])
+//       .then(function () {
+//         next();
+//       })
+//       .catch(function (error) {
+//         console.log(error);
+//         next();
+//       })
+//   }
 
-//   idea.delete = function (req, res, next) {
 
 
-//   idea.findByHouse = function (req, res, next) {
 
 
 module.exports = idea;

@@ -32,9 +32,8 @@ var ideasController = require('./controllers/ideasController');
 app.use('/projects', projectsController);
 app.use('/ideas', ideasController);
 app.use('/departments', departmentsController);
-// app.use(''),
 
-// app.use('/ideas', ideasController);
+app.use('/static', express.static(__dirname + '/public')) 
 
 app.listen(port, function () {
   console.log('---------------------------------------');

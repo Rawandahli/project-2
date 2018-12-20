@@ -13,7 +13,7 @@ CREATE TABLE projects(
   id serial primary key,
   name varchar,
    img_url varchar,
-  department_id int not null,
+  department_id int ,
   foreign key(department_id) references departments
 );
 
@@ -22,7 +22,9 @@ CREATE TABLE ideas(
   id serial primary key,
   idea varchar,
 project_id int not null,
-  foreign key(project_id) references projects);
+  foreign key(project_id) references projects
+  
+  );
 
 
 
@@ -74,8 +76,8 @@ VALUES
 ('youtube', 5),
 ('newspaper', 5),
 ('television Advertising', 5),
-('attandance ', 6),
-('dinner', 6),
-('venue', 6),
-('decor', 6),
-('entertainment', 6);
+('attandance ', 2),
+('dinner', 2),
+('venue', 2),
+('decor', 2),
+('entertainment', 2);
